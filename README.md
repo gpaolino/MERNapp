@@ -8,6 +8,7 @@ TOOLS:
 - Visual Studio Code (https://code.visualstudio.com/download)
 - Nodejs (https://nodejs.org/en/)
 - Express Package (npm install express)
+- Init package.json (npm init -y)
 - Install nodemon globally (npm install -g nodemon)
 - Install dotenv (npm install dotenv)
 - Postman (https://www.postman.com/downloads/)
@@ -15,6 +16,6 @@ TOOLS:
 - Mongoose (npm install mongoose)
 
 
-// TO START WEBSERVER FROM VSCODE
-//	- cd /backend
-//	- npm run dev
+TO START WEBSERVER FROM VSCODE:
+- cd /backend
+- npm run dev
