@@ -1,4 +1,5 @@
 const express = require('express')
+const Vehicle = require('../models/vehicleModel')
 
 const router = express.Router()
 
@@ -13,8 +14,15 @@ router.get('/:id', (req, res) => {
 })
 
 // POST a new vehicle
-router.post('/', (req, res) => {
-     res.json({mssg: 'POST a new vehicle'})
+router.post('/', async (req, res) => {
+    const {vehicle_type, license_plate, maker, model, registration_year, displacement_cm3, horse_power, fuel, transmission, condition, emissions_class} = req.body
+    
+    try {
+        const vehicle = await Vehicle.create({vehicle_type, license_plate, maker, model, registration_year, displacement_cm3, horse_power, fuel, transmission, condition, emissions_class})
+        res.status(200).json(vehicle)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
 })
 
 // DELETE a vehicle
