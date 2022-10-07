@@ -14,8 +14,15 @@ TOOLS:
 - Postman (https://www.postman.com/downloads/)
 - MongoDB CE on premise (https://www.mongodb.com/try/download/community)
 - Mongoose (npm install mongoose)
+- React Fronted (npx create-react-app frontend)
+- Upgrade tar (npm install tar@6 -g)
+
+- Check inside backend folder (npm audit)
+- Fix vulnerabilities (npm audit fix --force)
+- Fix npm audit error (https://github.com/facebook/create-react-app/issues/11174)
+- Check inside frontend folder (npm audit --production)
 
 
 TO START WEBSERVER FROM VSCODE:
-- cd /backend
+- cd .\backend\
 - npm run dev
