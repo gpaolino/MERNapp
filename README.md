@@ -16,13 +16,17 @@ TOOLS:
 - Mongoose (npm install mongoose)
 - React Fronted (npx create-react-app frontend)
 - Upgrade tar (npm install tar@6 -g)
+- React Router Dom (npm install react-router-dom)
 
 - Check inside backend folder (npm audit)
 - Fix vulnerabilities (npm audit fix --force)
-- Fix npm audit error (https://github.com/facebook/create-react-app/issues/11174)
+- Fix npm audit error for "react-scripts" (https://github.com/facebook/create-react-app/issues/11174)
 - Check inside frontend folder (npm audit --production)
 
 
 TO START WEBSERVER FROM VSCODE:
 - cd .\backend\
 - npm run dev
+
+TO START REACT APP FROM VSCODE:
+- cd .\frontend\
