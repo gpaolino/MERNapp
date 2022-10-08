@@ -30,3 +30,4 @@ TO START WEBSERVER FROM VSCODE:
 
 TO START REACT APP FROM VSCODE:
 - cd .\frontend\
+- npm start
