@@ -24,10 +24,13 @@ TOOLS:
 - Check inside frontend folder (npm audit --production)
 
 
-TO START WEBSERVER FROM VSCODE:
+TO START DB SEREVR:
+- Check MongoDB Server (MongoDB) service is up and running
+
+TO START BACKEND NODE SERVER FROM VSCODE:
 - cd .\backend\
 - npm run dev
 
-TO START REACT APP FROM VSCODE:
+TO START FRONTEND REACT APP FROM VSCODE:
 - cd .\frontend\
 - npm start

@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react'
 
+// components
+import VehicleDetails from '../components/VehicleDetails'
+
 const Home = () => {
     const [vehicles, setVehicles] = useState(null)
 
@@ -20,7 +23,7 @@ const Home = () => {
         <div className="home">
             <div className="vehicles">
                 {vehicles && vehicles.map((vehicle) => (
-                    <p key={vehicle._id}>{vehicle.maker} {vehicle.model} - {vehicle.license_plate}</p>
+                    <VehicleDetails key={vehicle._id} vehicle={vehicle} />
                 ))}
             </div>
         </div>
