@@ -1,8 +1,14 @@
 /* google font */
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');*/
 
 
-/* local font */
+/* local fonts */
+@font-face {
+  font-family: "PoppinsRegular";
+  src: local("PoppinsRegular"),
+    url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
 @font-face {
   font-family: "PoppinsBold";
   src: local("PoppinsBold"),
@@ -18,7 +24,7 @@
 body {
   background: #f1f1f1;
   margin:0;
-  font-family: "PoppinsBold";
+  font-family: "PoppinsRegular";
 }
 header {
   background: #fff;
@@ -34,6 +40,7 @@ header .container {
 header a {
   color: #333;
   text-decoration: none;
+  font-family: "PoppinsBold";
 }
 .pages {
   max-width: 1400px;

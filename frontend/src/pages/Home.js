@@ -20,7 +20,7 @@ const Home = () => {
         <div className="home">
             <div className="vehicles">
                 {vehicles && vehicles.map((vehicle) => (
-                    <p key={vehicle._id}>{vehicle.license_plate}</p>
+                    <p key={vehicle._id}>{vehicle.maker} {vehicle.model} - {vehicle.license_plate}</p>
                 ))}
             </div>
         </div>
