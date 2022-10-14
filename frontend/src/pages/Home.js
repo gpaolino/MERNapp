@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 // components
 import VehicleDetails from '../components/VehicleDetails'
+import VehicleForm from '../components/VehicleForm'
 
 const Home = () => {
     const [vehicles, setVehicles] = useState(null)
@@ -26,6 +27,7 @@ const Home = () => {
                     <VehicleDetails key={vehicle._id} vehicle={vehicle} />
                 ))}
             </div>
+            <VehicleForm />
         </div>
     )
 }
