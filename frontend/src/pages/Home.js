@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
+import { useVehiclesContext } from '../hooks/useVehiclesContext'
 
 // components
 import VehicleDetails from '../components/VehicleDetails'
 import VehicleForm from '../components/VehicleForm'
 
 const Home = () => {
-    const [vehicles, setVehicles] = useState(null)
+    const {vehicles, dispatch} = useVehiclesContext()
 
     useEffect(() => {
         const fetchVehicles = async () => {
@@ -13,11 +14,12 @@ const Home = () => {
             const json = await response.json()
 
             if (response.ok) {
-                setVehicles(json)
+                dispatch({type: 'SET_VEHICLES', payload: json})
             }
         }
 
         fetchVehicles()
+    // eslint-disable-next-line
     }, [])
 
     return (

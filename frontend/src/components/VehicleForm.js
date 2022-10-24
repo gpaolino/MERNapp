@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useVehiclesContext } from '../hooks/useVehiclesContext'
 
 const VehicleForm = () => {
+    const { dispatch } = useVehiclesContext()
+
     const [vehicle_type, setVehicleType] = useState('')
     const [maker, setMaker] = useState('')
     const [model, setModel] = useState('')
@@ -31,6 +34,7 @@ const VehicleForm = () => {
             setRegistrationYear('')
             setError(null)
             console.log('new vehicle added', json)
+            dispatch({type: 'CREATE_VEHICLE', payload: json})
         }
     }
 

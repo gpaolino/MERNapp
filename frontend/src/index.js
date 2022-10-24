@@ -4,10 +4,13 @@ import './fonts/Poppins/Poppins-Regular.ttf';
 import './fonts/Poppins/Poppins-Bold.ttf';
 import './index.css';
 import App from './App';
+import { VehiclesContextProvider } from './context/VehicleContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <VehiclesContextProvider>
+      <App />
+    </VehiclesContextProvider>
   </React.StrictMode>
 );
