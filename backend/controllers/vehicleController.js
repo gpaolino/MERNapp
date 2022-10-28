@@ -30,6 +30,24 @@ const getVehicle = async (req, res) => {
 const createVehicle = async (req, res) => {
     const {vehicle_type, license_plate, maker, model, registration_year, displacement_cm3, horse_power, fuel, transmission, condition, emissions_class} = req.body
     
+    let emptyFields = []
+
+    if(!vehicle_type) {
+        emptyFields.push('vehicle_type')
+    }
+    if(!maker) {
+        emptyFields.push('maker')
+    }
+    if(!model) {
+        emptyFields.push('model')
+    }
+    if(!registration_year) {
+        emptyFields.push('registration_year')
+    }
+    if(emptyFields.length > 0) {
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
+
     // add doc to db
     try {
         const vehicle = await Vehicle.create({vehicle_type, license_plate, maker, model, registration_year, displacement_cm3, horse_power, fuel, transmission, condition, emissions_class})

@@ -9,6 +9,7 @@ const VehicleForm = () => {
     const [model, setModel] = useState('')
     const [registration_year, setRegistrationYear] = useState('')
     const [error, setError] = useState(null)
+    const [emptyFields, setEmptyFields] = useState([])
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -26,6 +27,7 @@ const VehicleForm = () => {
 
         if(!response.ok) {
             setError(json.error)
+            setEmptyFields(json.emptyFields)
         }
         if(response.ok) {
             setVehicleType('')
@@ -33,6 +35,7 @@ const VehicleForm = () => {
             setModel('')
             setRegistrationYear('')
             setError(null)
+            setEmptyFields([])
             console.log('new vehicle added', json)
             dispatch({type: 'CREATE_VEHICLE', payload: json})
         }
@@ -47,6 +50,7 @@ const VehicleForm = () => {
                 type="text"
                 onChange={(e) => setVehicleType(e.target.value)}
                 value={vehicle_type}
+                className={emptyFields.includes('vehicle_type') ? 'error' : ''}
             /></label>
 
             <label>Maker:
@@ -54,6 +58,7 @@ const VehicleForm = () => {
                 type="text"
                 onChange={(e) => setMaker(e.target.value)}
                 value={maker}
+                className={emptyFields.includes('maker') ? 'error' : ''}
             /></label>
 
             <label>Model:
@@ -61,6 +66,7 @@ const VehicleForm = () => {
                 type="text"
                 onChange={(e) => setModel(e.target.value)}
                 value={model}
+                className={emptyFields.includes('model') ? 'error' : ''}
             /></label>
 
             <label>Registration Year:
@@ -68,6 +74,7 @@ const VehicleForm = () => {
                 type="text"
                 onChange={(e) => setRegistrationYear(e.target.value)}
                 value={registration_year}
+                className={emptyFields.includes('registration_year') ? 'error' : ''}
             /></label>
 
             <button type="submit">Add Vehicle</button>

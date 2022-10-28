@@ -12,6 +12,10 @@ export const vehiclesReducer = (state, action) => {
             return {
                 vehicles: [action.payload, ...state.vehicles]
             }
+        case 'DELETE_VEHICLE':
+            return {
+                vehicles: state.vehicles.filter((v) => v._id !== action.payload._id)
+            }
         default:
             return state
     }
