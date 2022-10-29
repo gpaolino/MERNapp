@@ -17,6 +17,8 @@ TOOLS:
 - React Fronted (npx create-react-app frontend)
 - Upgrade tar (npm install tar@6 -g)
 - React Router Dom (npm install react-router-dom)
+- Google Material Symbols (https://developers.google.com/fonts/docs/material_icons)
+- npm install material-symbols@latest
 
 - Check inside backend folder (npm audit)
 - Fix vulnerabilities (npm audit fix --force)
