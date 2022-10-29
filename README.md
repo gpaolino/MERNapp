@@ -18,7 +18,8 @@ TOOLS:
 - Upgrade tar (npm install tar@6 -g)
 - React Router Dom (npm install react-router-dom)
 - Google Material Symbols (https://developers.google.com/fonts/docs/material_icons)
-- npm install material-symbols@latest
+- Google Material Symbols offline (npm install material-symbols@latest)
+- Date-fns (npm install date-fns)
 
 - Check inside backend folder (npm audit)
 - Fix vulnerabilities (npm audit fix --force)

@@ -19,8 +19,7 @@ const Home = () => {
         }
 
         fetchVehicles()
-    // eslint-disable-next-line
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="home">

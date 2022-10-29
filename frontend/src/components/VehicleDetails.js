@@ -1,5 +1,8 @@
 import { useVehiclesContext } from '../hooks/useVehiclesContext'
 
+// date fns
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+
 const VehicleDetails = ({ vehicle }) => {
     const { dispatch } = useVehiclesContext()
 
@@ -19,7 +22,7 @@ const VehicleDetails = ({ vehicle }) => {
             <h4>{vehicle.vehicle_type}</h4>
             <p><strong>Maker: </strong>{vehicle.maker}</p>
             <p><strong>Model: </strong>{vehicle.model}</p>
-            <p>{vehicle.createdAt}</p>
+            <p>{formatDistanceToNow(new Date(vehicle.createdAt), { addSuffix: true })}</p>
             <span className = "material-symbols-outlined" onClick={handleClick}>delete</span>
         </div>
     )
