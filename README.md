@@ -1,5 +1,5 @@
 # MERNapp
-Test app developed with MERN stack
+Custom service diary app developed with MERN stack technology
 
 TUTORIAL:
 https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=1
