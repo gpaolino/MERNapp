@@ -21,6 +21,7 @@ TOOLS, FRAMEWORK & DEPENDENCIES:
 - Google Material Symbols (https://developers.google.com/fonts/docs/material_icons)
 - Google Material Symbols offline (npm install material-symbols@latest)
 - Date-fns (npm install date-fns)
+- OpenSSL (https://thesecmaster.com/procedure-to-install-openssl-on-the-windows-platform/)
 
 AUDIT PACKAGE:
 - Check inside backend folder (npm audit)
