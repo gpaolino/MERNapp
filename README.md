@@ -29,6 +29,10 @@ AUDIT PACKAGE:
 - Fix npm audit error for "react-scripts" (https://github.com/facebook/create-react-app/issues/11174)
 - Check inside frontend folder (npm audit --production)
 
+ENABLE HTTPS ON LOCALHOST:
+- (https://javascript.plainenglish.io/enable-https-for-localhost-during-local-development-in-node-js-96204453d72b)
+- (https://stackoverflow.com/questions/21397809/create-a-trusted-self-signed-ssl-cert-for-localhost-for-use-with-express-node)
+
 TO START DB SEREVR (DEV):
 - Check MongoDB Server (MongoDB) service is up and running
 
