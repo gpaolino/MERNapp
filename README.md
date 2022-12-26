@@ -32,6 +32,7 @@ AUDIT PACKAGE:
 ENABLE HTTPS ON LOCALHOST:
 - (https://javascript.plainenglish.io/enable-https-for-localhost-during-local-development-in-node-js-96204453d72b)
 - (https://stackoverflow.com/questions/21397809/create-a-trusted-self-signed-ssl-cert-for-localhost-for-use-with-express-node)
+- openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
 
 TO START DB SEREVR (DEV):
 - Check MongoDB Server (MongoDB) service is up and running
