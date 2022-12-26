@@ -108,6 +108,8 @@ KeysMyServiceBuddy0.ppk
 
 # TODO
 TODO_LIST.txt
+
+# CERT
 localhost.crt
 backend/security/cert.key
 backend/security/cert.pem
