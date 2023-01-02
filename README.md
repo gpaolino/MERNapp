@@ -89,7 +89,7 @@ Deploy backend API:
 Follow these steps to set up the Node.JS API on the server and configure NGINX to enable access to it.
 
 Clone the Node.JS + MongoDB API project into the /opt/backend directory with the following command 
-sudo git https://github.com/gpaolino/MyServiceBuddy.git /opt/
+sudo git clone https://github.com/gpaolino/MyServiceBuddy.git /opt/
 
 Navigate into the back-end directory and install all required npm packages with the following  command 
 cd /opt/backend && sudo npm install
