@@ -97,7 +97,7 @@ cd /opt/backend && sudo npm install
 Create the .env files for production configurations
 
 Start the API using the PM2 process manager with the following command 
-sudo pm2 start server.JS
+sudo pm2 start server.js
 
 The API is now running on Node.JS under the PM2 process manager and listening on port 4000.
 
@@ -108,7 +108,7 @@ Clone the React + Redux project into the /opt/frontend directory with the follow
 sudo git clone https://github.com/gpaolino/MyServiceBuddy.git /opt/
 
 Navigate into the front-end directory and install all required npm packages with the following command 
-cd /opt/front-end && sudo npm install
+cd /opt/frontend && sudo npm install
 
 Build the front-end app with the following command
 sudo npm run build
