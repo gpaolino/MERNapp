@@ -86,6 +86,51 @@ mongod --version
 #     }
 # }
 
+# IF THIS ERROR SHOWS UP:
+# paolo@serverubuntu0:~$ sudo systemctl status mongod.service
+# × mongod.service - MongoDB Database Server
+#      Loaded: loaded (/lib/systemd/system/mongod.service; enabled; vendor preset: enabled)
+#      Active: failed (Result: exit-code) since Sun 2023-01-08 00:58:33 UTC; 7s ago
+#        Docs: https://docs.mongodb.org/manual
+#     Process: 1065 ExecStart=/usr/bin/mongod --config /etc/mongod.conf (code=exited, status=14)
+#    Main PID: 1065 (code=exited, status=14)
+#         CPU: 508ms
+# 
+# Jan 08 00:58:33 serverubuntu0 systemd[1]: Started MongoDB Database Server.
+# Jan 08 00:58:33 serverubuntu0 systemd[1]: mongod.service: Main process exited, code=exited, status=14/n/a
+# Jan 08 00:58:33 serverubuntu0 systemd[1]: mongod.service: Failed with result 'exit-code'.
+# paolo@serverubuntu0:~$
+# 
+# THEN EXECUTE THE FOLLOWING COMMANDS:
+# 
+# I had the same problem, so I tried changing the permissions and some other commands I found online that messed up my MongoDB installation. Following are the commands that I tried from online and screwed up my installation:
+# 
+# $ sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+# 
+# $ sudo systemctl status mongod
+# 
+# $ sudo systemctl start mongodb
+# 
+# $ sudo systemctl unmask mongodb
+# 
+# After that, I reinstall mongodb by using following commands, which solved the issue:
+# 
+# $ sudo service mongod stop
+# 
+# $ sudo apt-get purge mongodb-org*
+# 
+# $ sudo rm -r /var/log/mongodb
+# 
+# $ sudo rm -r /var/lib/mongodb
+# 
+# $ sudo apt-get install -y mongodb-org
+# 
+# Now start the mongodb and check the status using following commands:
+# 
+# $ sudo systemctl start mongod
+# 
+# $ sudo systemctl status mongod
+
 
 echo "
 ----------------------
