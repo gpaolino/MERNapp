@@ -46,7 +46,7 @@ TO START FRONTEND REACT APP FROM VSCODE (DEV):
 - npm start
 
 
-# DEPLOY ON AWS:
+# DEPLOY ON AWS (or ON A PERSONAL HOME SERVER LINUX):
 How To Build And Deploy A MERN Stack Application On AWS?
 (https://www.workfall.com/learning/blog/how-to-build-and-deploy-a-mern-stack-application-on-aws/)
 (https://www.youtube.com/watch?v=FanoTGjkxhQ)
@@ -88,15 +88,16 @@ Deploy backend API:
 
 Follow these steps to set up the Node.JS API on the server and configure NGINX to enable access to it.
 
-Clone the Node.JS + MongoDB API project into the /opt/backend directory with the following command 
+Clone the Node.JS + MongoDB API project into the /opt/backend directory with the following command:
 sudo git clone https://github.com/gpaolino/MyServiceBuddy.git /opt/
 
-Navigate into the back-end directory and install all required npm packages with the following  command 
+Navigate into the back-end directory and install all required npm packages with the following command:
 cd /opt/backend && sudo npm install
 
-Create the .env files for production configurations
+Create the .env files for production configurations:
+sudo vi /opt/backend/.env
 
-Start the API using the PM2 process manager with the following command 
+Start the API using the PM2 process manager with the following command:
 sudo pm2 start server.js
 
 The API is now running on Node.JS under the PM2 process manager and listening on port 4000.
@@ -104,13 +105,13 @@ The API is now running on Node.JS under the PM2 process manager and listening on
 
 Deploy Front end API using React:
 
-Clone the React + Redux project into the /opt/frontend directory with the following command
+Clone the React + Redux project into the /opt/frontend directory with the following command:
 sudo git clone https://github.com/gpaolino/MyServiceBuddy.git /opt/
 
-Navigate into the front-end directory and install all required npm packages with the following command 
+Navigate into the front-end directory and install all required npm packages with the following command:
 cd /opt/frontend && sudo npm install
 
-Build the front-end app with the following command
+Build the front-end app with the following command:
 sudo npm run build
 
 The React app is now built and ready to be served from the /opt/front-end/build directory, in the next step we’ll configure our NGINX web server to enable access to it.
@@ -122,10 +123,10 @@ Since our MERN Stack application is made up of two separate projects that both n
 
 Follow these steps to configure NGINX for the MERN stack app.
 
-Delete the default NGINX site config file with the following command 
+Delete the default NGINX site config file with the following command:
 sudo rm /etc/nginx/sites-available/default
 
-Launch the nano text editor to create a new default site config file with the following command 
+Launch the nano text editor to create a new default site config file with the following command:
 sudo nano /etc/nginx/sites-available/default
 
 Write required code in this file. After updating the file with code, it should look like as shown in the below image.
@@ -146,7 +147,7 @@ server {
   }
 }
 
-Save the file and restart nginx using the following command
+Save the file and restart nginx using the following command:
 sudo systemctl restart nginx
 
 
