@@ -113,3 +113,6 @@ TODO_LIST.txt
 localhost.crt
 backend/security/cert.key
 backend/security/cert.pem
+
+# DATABASE BACKUP
+backend/db/
