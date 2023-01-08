@@ -160,9 +160,53 @@ server {
   }
 }
 
+If you want to enable https connection:
+Create a file in NGINX referencing these certificates,
+
+sudo nano /etc/nginx/snippets/self-signed.conf
+
+The certificate reference file will be,
+
+ssl_certificate /opt/backend/security/cert.pem;
+ssl_certificate_key /opt/backend/security/cert.key;
+
+For forward secrecy, we have to create a strong Diffie-Hellman group,
+
+sudo openssl dhparam -out /opt/backend/security/dhparam.pem 2048
+
+Now add the following snippet for HTTPS connection in the previous configuration file in /etc/nginx/sites-enabled/client-config,
+
+server {
+    listen 443 ssl http2 default_server;
+    listen [::]:443 ssl http2 default_server;
+    include snippets/self-signed.conf;
+}
+
+The final client-config file will be:
+
+server {
+  '#listen 80 default_server;
+  listen 443 ssl http2 default_server;
+  listen [::]:443 ssl http2 default_server;
+  include snippets/self-signed.conf;
+  server_name _;
+  
+  '# react app & front-end files
+  location / {
+    root /opt/frontend/build;
+	try_files $uri /index.html;
+  }
+  
+  '# node api reverse proxy
+  location /api/ {
+    #proxy_pass http://localhost:4000/api/;
+    proxy_pass https://localhost:8080/api/;
+  }
+}
+
 Save the file and restart nginx using the following command:
 sudo systemctl restart nginx
 
 
 Test your MERN stack application running on AWS:
-Enter the public DNS name of your AWS EC2 instance in a browser to access and test your new MERN stack application.
+Enter the public DNS name of your AWS EC2 instance (or the ip address of your server) in a browser to access and test your new MERN stack application.
