@@ -105,6 +105,16 @@ sudo pm2 start server.js
 
 The API is now running on Node.JS under the PM2 process manager and listening on port 4000.
 
+Enable PM2 to Autostart server.js App at System Boot:
+sudo pm2 startup
+sudo pm2 startup systems
+sudo systemctl status pm2-root.service
+cd /opt/backend/
+sudo pm2 start server.js
+sudo pm2 save
+sudo pm2 ls
+(to manually resurrect processes use: sudo pm2 resurrect) 
+
 
 Deploy Front end API using React:
 
