@@ -97,6 +97,9 @@ cd /opt/backend && sudo npm install
 Create the .env files for production configurations:
 sudo vi /opt/backend/.env
 
+If your app uses https don't forget to create ceritifacte under the backend/security/ folder:
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
+
 Start the API using the PM2 process manager with the following command:
 sudo pm2 start server.js
 
