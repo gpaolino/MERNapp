@@ -35,6 +35,52 @@ ENABLE HTTPS ON LOCALHOST:
 - openssl req -x509 -nodes -days 999 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
   Edit: before executing the command edit req.cnf and set CN and DNS.1 equal to the host name instead of localhost (ex. myservername, ecc...)
 
+LOCALHOST:
+```
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = IT
+ST = State
+L = Location
+O = Organization Name
+OU = Organizational Unit 
+CN = www.localhost.com
+[v3_req]
+keyUsage = critical, digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = www.localhost.com
+DNS.2 = localhost.com
+DNS.3 = localhost
+```
+
+HOME SERVER:
+```
+[req]
+distinguished_name = req_distinguished_name
+x509_extensions = v3_req
+prompt = no
+[req_distinguished_name]
+C = IT
+ST = State
+L = Location
+O = Organization Name
+OU = Organizational Unit 
+CN = serverubuntu0
+[v3_req]
+keyUsage = critical, digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+[alt_names]
+DNS.1 = serverubuntu0
+DNS.2 = localhost.com
+DNS.3 = localhost
+```
+
 ENABLE HTTPS ON YOUR DOMAIN:
 - (https://letsencrypt.org/it/getting-started/)
 - (https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)

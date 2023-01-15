@@ -110,10 +110,9 @@ KeysMyServiceBuddy0.ppk
 TODO_LIST.txt
 
 # CERT
-localhost.crt
-ServerUbuntu0.crt
 backend/security/cert.key
 backend/security/cert.pem
+backend/security/req.cnf
 
 # DATABASE BACKUP
 backend/db/
