@@ -34,6 +34,11 @@ ENABLE HTTPS ON LOCALHOST:
 - (https://stackoverflow.com/questions/21397809/create-a-trusted-self-signed-ssl-cert-for-localhost-for-use-with-express-node)
 - openssl req -x509 -nodes -days 999 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
 
+ENABLE HTTPS ON YOUR DOMAIN:
+- (https://letsencrypt.org/it/getting-started/)
+- (https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
+- (https://r.je/guide-lets-encrypt-certificate-for-local-development)
+
 TO START DB SEREVR (DEV):
 - Check MongoDB Server (MongoDB) service is up and running
 
@@ -92,10 +97,10 @@ Clone the Node.JS + MongoDB API project into the /opt/backend directory with the
 - sudo git clone https://github.com/gpaolino/MyServiceBuddy.git /opt/
 
 Navigate into the back-end directory and install all required npm packages with the following command:
-cd /opt/backend && sudo npm install
+- cd /opt/backend && sudo npm install
 
 Create the .env files for production configurations:
-sudo vi /opt/backend/.env
+- sudo vi /opt/backend/.env
 
 If your app uses https don't forget to create ceritifacte under the backend/security/ folder:
 - sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
@@ -105,15 +110,15 @@ Start the API using the PM2 process manager with the following command:
 
 The API is now running on Node.JS under the PM2 process manager and listening on port 4000.
 
-Enable PM2 to Autostart server.js App at System Boot:
-sudo pm2 startup
-sudo pm2 startup systems
-sudo systemctl status pm2-root.service
-cd /opt/backend/
-sudo pm2 start server.js
-sudo pm2 save
-sudo pm2 ls
-(to manually resurrect processes use: sudo pm2 resurrect) 
+# Enable PM2 to Autostart server.js App at System Boot:
+- sudo pm2 startup
+- sudo pm2 startup systems
+- sudo systemctl status pm2-root.service
+- cd /opt/backend/
+- sudo pm2 start server.js
+- sudo pm2 save
+- sudo pm2 ls
+- (to manually resurrect processes use: sudo pm2 resurrect) 
 
 
 # Deploy Front end API using React:
@@ -214,12 +219,6 @@ server {
 
 Save the file and restart nginx using the following command:
 - sudo systemctl restart nginx
-
-
-# Extra resources in order to obtain CA signed certificates:
-(https://letsencrypt.org/it/getting-started/)
-(https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal)
-(https://r.je/guide-lets-encrypt-certificate-for-local-development)
 
 
 # Test your MERN stack application running on AWS (or your home server)
