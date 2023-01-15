@@ -11,8 +11,8 @@ const fs = require('fs');
 // Read the certificate and the private key for the https server options 
 // ------------------- STEP 2
 const httpsOptions = {
-    key: fs.readFileSync("./security/cert.key"),
-    cert: fs.readFileSync("./security/cert.pem"),
+    key: fs.readFileSync(process.env.CERTKEY),
+    cert: fs.readFileSync(process.env.CERT),
   };
 
 // express app
