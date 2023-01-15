@@ -17,3 +17,4 @@ subjectAltName = @alt_names
 DNS.1 = www.localhost.com
 DNS.2 = localhost.com
 DNS.3 = localhost
+DNS.4 = serverubuntu0
