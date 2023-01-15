@@ -137,10 +137,10 @@ Since our MERN Stack application is made up of two separate projects that both n
 Follow these steps to configure NGINX for the MERN stack app.
 
 Delete the default NGINX site config file with the following command:
-sudo rm /etc/nginx/sites-available/default
+- sudo rm /etc/nginx/sites-available/default
 
 Launch the nano text editor to create a new default site config file with the following command:
-sudo nano /etc/nginx/sites-available/default
+- sudo nano /etc/nginx/sites-available/default
 
 Write required code in this file. After updating the file with code, it should look like as shown in the below image.
 
@@ -222,5 +222,5 @@ Save the file and restart nginx using the following command:
 (https://r.je/guide-lets-encrypt-certificate-for-local-development)
 
 
-Test your MERN stack application running on AWS (or your home server):
+# Test your MERN stack application running on AWS (or your home server)
 Enter the public DNS name of your AWS EC2 instance (or the ip address of your server) in a browser to access and test your new MERN stack application.
