@@ -33,6 +33,7 @@ ENABLE HTTPS ON LOCALHOST:
 - (https://javascript.plainenglish.io/enable-https-for-localhost-during-local-development-in-node-js-96204453d72b)
 - (https://stackoverflow.com/questions/21397809/create-a-trusted-self-signed-ssl-cert-for-localhost-for-use-with-express-node)
 - openssl req -x509 -nodes -days 999 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
+  Edit: before executing the command edit req.cnf and set CN and DNS.1 equal to the host name instead of localhost (ex. myservername, ecc...)
 
 ENABLE HTTPS ON YOUR DOMAIN:
 - (https://letsencrypt.org/it/getting-started/)
